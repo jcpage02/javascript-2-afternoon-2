@@ -274,7 +274,7 @@ for (var i = 0; i < num2; i++) {
 function longer (arr1, arr2){
   if(arr1.length > arr2.length){
     return arr1
-  }else if(arr1.length < arr2.length){
+  }else {
     return arr2
   }
 }
@@ -289,7 +289,15 @@ function longer (arr1, arr2){
 */
 
 //Code Here
-
+function both (arr1, arr2){
+  let newArr = []
+  arr1.forEach(function(val, i){
+    if(arr2.includes(val)){
+      newArr.push(val)
+    }
+  })
+  return newArr
+}
 
 
 ////////// PROBLEM 12 //////////
@@ -329,7 +337,8 @@ var colt = {
 */
 
 //Code Here
-
+devMountainEmployees.push(tyler, cahlan, ryan, colt)
+console.log(devMountainEmployees.length)
 
 
 /*
@@ -338,7 +347,11 @@ var colt = {
 */
 
 //Code Here
-
+devMountainEmployees.forEach(function(val, i){
+  if(val.name === "Cahlan"){
+    devMountainEmployees.splice(i,1)
+  }
+})
 
 
 ////////// PROBLEM 13 //////////
@@ -350,7 +363,7 @@ var colt = {
 */
 
 //Code Here
-
+let users = {}
 
 
 /*
@@ -369,7 +382,20 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
-
+users.push(user1,
+  {
+    name: "James",
+    email: 'jcpage@gmail.com',
+    password: 'dogsarecool',
+    username: 'jcpage'
+  },
+  {
+    name: "Laura",
+    email: 'lrbblanch@gmail.com',
+    password: 'catsarecool',
+    username: 'lrbblanch'
+  }
+)
 
 
 /*
@@ -383,7 +409,11 @@ var user1 = {
 */
 
 //Code Here
-
+users.forEach((val, i) => {
+  if(users.email === "tylermcginnis33@gmail.com"){
+    users.splice(i,1)
+  }
+})
 
 
 /*
