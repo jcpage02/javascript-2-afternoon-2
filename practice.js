@@ -159,14 +159,18 @@ var getRandomArbitrary = function () {
 */
 
 //Code Here
-function finder (arr) {
-  let getNum = getRandomArbitrary()
-  for(i = 0; i < arr.length; i++){
-    if(arr.includes(getNum)){
-      return true
-    }else {
-      return false
+function finder (arr){
+  let random = getRandomArbitrary()
+  let found
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] === random){
+      found = true
     }
+  }
+  if(found === true){
+    return found
+  }else {
+    return false
   }
 }
 
@@ -197,16 +201,18 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-function removeItem (myGroceryList,itemRemove){
-  myGroceryList.forEach(function(val, i){
-    if(val === itemRemove){
-      myGroceryList.splice(i,1)
-    }
-  })
-  return myGroceryList
+function removeItem(myGroceryList,item){
+  if(!myGroceryList || !item) {return []}
+  let index = myGroceryList.indexOf(item)
+  if(index <= 0){
+    myGroceryList.splice(index, 1)
+    return myGroceryList
+  }
 }
 
+
 function addItem(myGroceryList,itemAdd){
+  if(!myGroceryList || !itemAdd) {return []}
   myGroceryList.push(itemAdd)
   return myGroceryList
 }
